@@ -6,7 +6,7 @@ html, body, #root, .main {
   padding: 0;
   height: 100%;
   width: 100%;
-  min-width: 450px;
+  min-width: 500px;
   font-family: 'Source Sans Pro',Helvetica,Segoe,Arial,sans-serif;
   color: #505659;
 }
@@ -40,7 +40,10 @@ header>div{
   margin-right: 20px;
   border-bottom: none;
 }
-
+.nav-tabs a {
+  text-decoration: none;
+  color: inherit;
+}
 .nav-tabs>li>a {
   color: rgba(255,255,255,.8);
   border: none;

@@ -3,7 +3,6 @@ import $ from 'jquery';
 import '../css/app.css';
 import {fetchNode} from '../ajax/ajax.js';
 import {Header} from './header.js';
-// import { Button } from 'react-bootstrap';
 
 class App extends Component {
   constructor(props) {
