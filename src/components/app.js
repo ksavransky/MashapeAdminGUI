@@ -3,6 +3,7 @@ import $ from 'jquery';
 import '../css/app.css';
 import {fetchNode} from '../ajax/ajax.js';
 import {Header} from './header.js';
+import {Basics} from './basics.js';
 
 class App extends Component {
   constructor(props) {
@@ -23,6 +24,7 @@ class App extends Component {
     return (
       <div className="main">
         <Header/>
+<Basics/>
       </div>
     );
   }

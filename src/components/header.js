@@ -27,15 +27,17 @@ export class Header extends Component {
         <img src={logo} id="top-logo" />
         <div>Administrator Interface</div>
         <Nav bsStyle="tabs" activeKey={this.state.activeKey} onSelect={this.handleSelect}>
-          <NavItem className="nav-item" eventKey="1"><Link to="/apis">APIs</Link></NavItem>
-          <NavItem className="nav-item" eventKey="2"><Link to="/consumers">Consumers</Link></NavItem>
-          <NavItem className="nav-item" eventKey="3"><Link to="/upstreams">Upstreams</Link></NavItem>
-          <NavItem className="nav-item" eventKey="4"><Link to="/plugins">Plugins</Link></NavItem>
+          <NavItem className="nav-item" eventKey="1"><Link to="/home">Home</Link></NavItem>
+          <NavItem className="nav-item" eventKey="2"><Link to="/apis">APIs</Link></NavItem>
+          <NavItem className="nav-item" eventKey="3"><Link to="/consumers">Consumers</Link></NavItem>
+          <NavItem className="nav-item" eventKey="4"><Link to="/upstreams">Upstreams</Link></NavItem>
+          <NavItem className="nav-item" eventKey="5"><Link to="/plugins">Plugins</Link></NavItem>
           <NavDropdown title={this.state.title} id="nav-dropdown">
-            <MenuItem eventKey="1"><Link to="/apis">APIs</Link></MenuItem>
-            <MenuItem eventKey="2"><Link to="/consumers">Consumers</Link></MenuItem>
-            <MenuItem eventKey="3"><Link to="/upstreams">Upstreams</Link></MenuItem>
-            <MenuItem eventKey="4"><Link to="/plugins">Plugins</Link></MenuItem>
+            <MenuItem eventKey="1"><Link to="/home">Home</Link></MenuItem>
+            <MenuItem eventKey="2"><Link to="/apis">APIs</Link></MenuItem>
+            <MenuItem eventKey="3"><Link to="/consumers">Consumers</Link></MenuItem>
+            <MenuItem eventKey="4"><Link to="/upstreams">Upstreams</Link></MenuItem>
+            <MenuItem eventKey="5"><Link to="/plugins">Plugins</Link></MenuItem>
           </NavDropdown>
         </Nav>
       </header>
