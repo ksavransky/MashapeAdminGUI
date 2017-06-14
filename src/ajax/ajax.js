@@ -8,10 +8,3 @@ export const fetchNode = function(success){
     success
   });
 }
-// export const fetchRiskTable = function(success){
-//   $.ajax({
-//     method: 'GET',
-//     url: 'api/risktable',
-//     success
-//   });
-// };
