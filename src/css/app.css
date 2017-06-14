@@ -30,6 +30,10 @@ header>div{
   padding-bottom: 5px;
 }
 
+#add-info{
+  margin-bottom: 15px;
+}
+
 #top-logo{
   margin-left: 20px;
   cursor: pointer;
@@ -39,15 +43,54 @@ header>div{
   display: none;
 }
 
-#add-info{
-  margin-bottom: 15px;
+
+.add-button {
+  position: fixed;
+  top: 15%;
+  left: 2%;
+  cursor: pointer;
+  width: 47px;
+  height: 47px;
+  background: #fff;
+  color: #555;
+  border: 2px solid #555;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
 }
 
-.page-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.list-group-item {
+  background: rgba(255,255,255,.1) !important;
+  color: #fff !important;
 }
+
+.inner-panel {
+  margin-top: 20px;
+  margin-left: 30px;
+  width: auto !important;
+}
+
+.inner-panel .list-group-item{
+  background: rgba(255,255,255,0.03) !important;
+}
+
+.modal-container {
+  position: absolute;
+  top: 15%;
+  height: 100%;
+  width: 100%;
+}
+.modal-container .modal, .modal-container .modal-backdrop {
+  position: absolute;
+  color: black;
+}
+
+.modal-backdrop {
+  background: transparent;
+}
+
 .nav-tabs {
   font-size: 18px;
   margin-right: 20px;
@@ -73,18 +116,10 @@ header>div{
   border-radius: 4px;
 }
 
-.text-line {
-  margin: 10px;
-}
-
-.list-group-item {
-  color: black;
-}
-
-.inner-panel{
-  margin-top: 20px;
-  margin-left: 30px;
-  width: auto !important;
+.page-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .panel {
@@ -100,46 +135,8 @@ header>div{
   text-transform: capitalize;
 }
 
-.list-group-item{
-  background: rgba(255,255,255,.1) !important;
-  color: #fff !important;
-}
-
-.inner-panel .list-group-item{
-  background: rgba(255,255,255,0.03) !important;
-  color: #fff !important;
-}
-
-.modal-container {
-  position: absolute;
-  top: 15%;
-  height: 80%;
-  width: 90%;
-}
-.modal-container .modal, .modal-container .modal-backdrop {
-  position: absolute;
-  color: black;
-}
-
-.modal-backdrop {
-  background: rgb(148, 159, 167);
-}
-
-.add-button {
-  position: fixed;
-  top: 15%;
-  left: 2%;
-  cursor: pointer;
-  width: 47px;
-  height: 47px;
-  background: #fff;
-  color: #555;
-  border: 2px solid #555;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 40px;
+.text-line {
+  margin: 10px;
 }
 
 @media only screen and (max-width:900px){
