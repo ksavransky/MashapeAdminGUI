@@ -29,6 +29,7 @@ header>div{
 
 #top-logo{
   margin-left: 20px;
+  cursor: pointer;
 }
 
 #nav-dropdown{
@@ -80,10 +81,29 @@ header>div{
 .inner-panel{
   margin-top: 20px;
   margin-left: 30px;
+  width: auto !important;
 }
 
 .panel {
   width: 50%;
+  background: transparent;
+}
+
+.panel-heading{
+  cursor: pointer;
+  background-color: rgba(255,255,255,.4) !important;
+  color: #fff !important;
+  text-transform: capitalize;
+}
+
+.list-group-item{
+  background: rgba(255,255,255,.1) !important;
+  color: #fff !important;
+}
+
+.inner-panel .list-group-item{
+  background: rgba(255,255,255,0.03) !important;
+  color: #fff !important;
 }
 
 @media only screen and (max-width:900px){
