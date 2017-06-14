@@ -31,15 +31,17 @@ export const ModalTrigger = React.createClass({
     }
 
     const consumerParams = {
-
+      username: "John Doe",
+      custom_id: "abc123"
     }
 
     const upstreamParams = {
-
+      name: "service.v20.x",
+      slots: "10"
     }
 
     const pluginParams = {
-        
+      Note: "This is not ready yet. It will be added in the future. Thank you."
     }
 
     let formGroups = [];
@@ -52,8 +54,7 @@ export const ModalTrigger = React.createClass({
     } else if(this.props.title == "upstream"){
       currentParams = upstreamParams;
     } else if(this.props.title == "plugin"){
-      console.log('here')
-      currentParams = pluginParams;
+        currentParams = pluginParams;
     }
 
     for(let key in currentParams){
