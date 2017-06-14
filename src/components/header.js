@@ -8,11 +8,12 @@ export class Header extends Component {
   constructor(props) {
       super(props);
       this.state = {activeKey: "1",
-                    title: "APIs"};
+                    title: "Home"};
       this.handleSelect = this.handleSelect.bind(this);
+      this.logoClick = this.logoClick.bind(this);
   }
 
-  handleSelect(eventKey) {
+  handleSelect(eventKey = "1") {
     let titleArray = [];
     document.querySelectorAll('.nav .dropdown ul li a>a').forEach(el=>titleArray.push(el.text));
     this.setState({activeKey: eventKey, title: titleArray[eventKey - 1]});
@@ -21,10 +22,14 @@ export class Header extends Component {
     }
   }
 
+logoClick(){
+  document.querySelectorAll(`.nav-item:nth-child(1) a`)[1].click();
+}
+
   render() {
     return (
       <header>
-        <img src={logo} id="top-logo" />
+        <img src={logo} id="top-logo" onClick={this.logoClick}/>
         <div>Administrator Interface</div>
         <Nav bsStyle="tabs" activeKey={this.state.activeKey} onSelect={this.handleSelect}>
           <NavItem className="nav-item" eventKey="1"><Link to="/home">Home</Link></NavItem>

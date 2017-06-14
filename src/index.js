@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { IndexRoute, hashHistory, Redirect } from 'react-router';
+import { IndexRoute, Redirect } from 'react-router';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
 import App from './components/app.js'
+import Basics from './components/basics.js';
 import Apis from './components/apis.js';
 import Consumers from './components/consumers.js';
 import Upstreams from './components/upstreams.js';
@@ -17,6 +18,7 @@ ReactDOM.render((
           <Route exact path="/" render={() => (
               <Redirect to="/home"/>
           )}/>
+          <Route path="/home" component={Basics}></Route>
           <Route path="/apis" component={Apis}></Route>
           <Route path="/consumers" component={Consumers}></Route>
           <Route path="/plugins" component={Plugins}></Route>
