@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Modal, Button, Form, FormGroup, FormControl, ControlLabel} from 'react-bootstrap';
+import {createEntry} from '../ajax/ajax.js'
 
 export const ModalTrigger = React.createClass({
   getInitialState() {
@@ -8,34 +9,65 @@ export const ModalTrigger = React.createClass({
 
   render() {
     let close = () => this.setState({ show: false});
+    let handleResponse = (response) => {
+       close();
+       this.props.updateParent();
+    };
+    let submitForm = (e) => {
+      e.preventDefault();
+      let params = {};
+      document.querySelectorAll('.form-control').forEach(input => {
+        params[input.name] = input.value;
+      })
+      createEntry(response => handleResponse(response), (this.props.title + "s"), params);
+    }
+
+    const apiParams = {
+      name: "exampleapi",
+      hosts: "example.com",
+      uris: "/my-path",
+      methods: "GET,POST",
+      upstream_url: "https://example.com"
+    }
+
+    const consumerParams = {
+
+    }
+
+    const upstreamParams = {
+
+    }
+
+    const pluginParams = {
+        
+    }
+
+    let formGroups = [];
+
+    let currentParams;
+    if(this.props.title == "api"){
+      currentParams = apiParams;
+    } else if(this.props.title == "consumer"){
+      currentParams = consumerParams;
+    } else if(this.props.title == "upstream"){
+      currentParams = upstreamParams;
+    } else if(this.props.title == "plugin"){
+      console.log('here')
+      currentParams = pluginParams;
+    }
+
+    for(let key in currentParams){
+      formGroups.push(
+              <FormGroup>
+                <ControlLabel>{key}</ControlLabel>
+                <FormControl type="text" name={key} placeholder={currentParams[key]} />
+              </FormGroup>)
+    }
 
     const formInstance = (
       <Form>
-        <FormGroup controlId="">
-          <ControlLabel>name</ControlLabel>
-          <FormControl type="text" name="name" placeholder="exampleapi2" />
-        </FormGroup>
-
-        <FormGroup controlId="">
-          <ControlLabel>hosts</ControlLabel>
-          <FormControl type="text" name="hosts" placeholder="example2.com" />
-        </FormGroup>
-
-        <FormGroup controlId="">
-          <ControlLabel>uris</ControlLabel>
-          <FormControl type="text" name="uris" placeholder="/my-path" />
-        </FormGroup>
-
-        <FormGroup controlId="">
-          <ControlLabel>methods</ControlLabel>
-          <FormControl type="text" name="methods" placeholder="GET,POST" />
-        </FormGroup>
-
-        <FormGroup controlId="">
-          <ControlLabel>upstream_url</ControlLabel>
-          <FormControl type="text" name="upstream_url" placeholder="https://example2.com" />
-        </FormGroup>
-        <Button type="submit">
+        {formGroups}
+        <Button onClick={submitForm} type="submit">
           Create
         </Button>
       </Form>
@@ -45,11 +77,9 @@ export const ModalTrigger = React.createClass({
       <div className="modal-container">
         <div className="add-button"
           onClick={() => {
-            console.log("in click");
             this.setState({show: true});
           }}
-        >
-         +
+          > +
         </div>
 
         <Modal

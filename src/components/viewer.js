@@ -2,17 +2,26 @@ import React, { Component } from 'react';
 import '../css/app.css';
 import {Textline} from './textline.js';
 import {createPanel} from '../util.js';
-import {fetchFunction} from '../ajax/ajax.js'
+import {fetchEntry} from '../ajax/ajax.js'
 import {ModalTrigger} from './modal.js';
 
 export default class Viewer extends Component {
   constructor(props) {
       super(props);
       this.state = {objects: "", updated: false};
+      this.update = this.update.bind(this);
   }
 
   componentWillMount(){
-    fetchFunction(response => this.setState({objects: response.data, updated: true}), this.props.location.pathname);
+    fetchEntry(response => this.setState({objects: response.data, updated: true}), this.props.location.pathname);
+  }
+
+  componentDidUpdate(){
+    fetchEntry(response => this.setState({objects: response.data, updated: true}), this.props.location.pathname);
+  }
+
+  update(){
+    this.setState({updated: false});
   }
 
   render() {
@@ -49,7 +58,7 @@ export default class Viewer extends Component {
       <div className="page-content">
           <Textline text={title}/>
           {panels}
-          <ModalTrigger title={title.slice(0,-1).toLowerCase()}/>
+          <ModalTrigger updateParent={this.update} title={title.slice(0,-1).toLowerCase()}/>
       </div>
     );
   }
