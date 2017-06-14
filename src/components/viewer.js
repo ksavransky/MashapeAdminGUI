@@ -45,8 +45,8 @@ export default class Viewer extends Component {
       title = title.slice(0, 1).toUpperCase() + title.slice(1);
      }
 
-     if(panels.length == 0){
-       panels = "No " + title + ". Please create some " + title + ".";
+     if(panels.length == 0){ 
+         panels = "No " + title + ". Please create some " + title + ".";
      }
 
     return (

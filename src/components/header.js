@@ -22,9 +22,20 @@ export class Header extends Component {
     }
   }
 
-logoClick(){
-  document.querySelectorAll(`.nav-item:nth-child(1) a`)[1].click();
-}
+  logoClick(){
+    document.querySelectorAll(`.nav-item:nth-child(1) a`)[1].click();
+  }
+
+  componentDidMount(){
+    let hashChangeClick = function(){
+      document.querySelectorAll('.nav-item>a>a').forEach(el=>{
+        if("#/" + el.innerHTML.toLowerCase() == window.location.hash){
+          el.click()
+        }
+      });
+    }
+    $(window).off('hashchange', hashChangeClick).on('hashchange', hashChangeClick);
+  }
 
   render() {
     return (
