@@ -117,7 +117,9 @@ header>div{
   .nav-item{
     display: none !important;
   }
+}
 
+@media only screen and (max-width:600px){
   header>div{
     position: static;
     color: rgba(255,255,255,1);

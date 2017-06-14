@@ -38,9 +38,20 @@ export default class Viewer extends Component {
       panels.push(panel);
      });
 
+     let title = this.props.location.pathname.slice(1);
+     if(title == "apis"){
+       title = "APIs";
+     } else {
+      title = title.slice(0, 1).toUpperCase() + title.slice(1);
+     }
+
+     if(panels.length == 0){
+       panels = "No " + title + ". Please create some " + title + ".";
+     }
+
     return (
       <div className="page-content">
-          <Textline text={this.props.location.pathname.slice(1)}/>
+          <Textline text={title}/>
           {panels}
       </div>
     );

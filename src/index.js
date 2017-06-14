@@ -5,10 +5,6 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
 import App from './components/app.js'
 import Basics from './components/basics.js';
-import Apis from './components/apis.js';
-import Consumers from './components/consumers.js';
-import Upstreams from './components/upstreams.js';
-import Plugins from './components/plugins.js';
 import Viewer from './components/viewer.js'
 import './css/app.css';
 
