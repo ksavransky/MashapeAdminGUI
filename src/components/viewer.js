@@ -3,6 +3,7 @@ import '../css/app.css';
 import {Textline} from './textline.js';
 import {createPanel} from '../util.js';
 import {fetchFunction} from '../ajax/ajax.js'
+import {ModalTrigger} from './modal.js';
 
 export default class Viewer extends Component {
   constructor(props) {
@@ -48,6 +49,7 @@ export default class Viewer extends Component {
       <div className="page-content">
           <Textline text={title}/>
           {panels}
+          <ModalTrigger title={title.slice(0,-1).toLowerCase()}/>
       </div>
     );
   }
