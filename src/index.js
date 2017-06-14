@@ -9,6 +9,7 @@ import Apis from './components/apis.js';
 import Consumers from './components/consumers.js';
 import Upstreams from './components/upstreams.js';
 import Plugins from './components/plugins.js';
+import Viewer from './components/viewer.js'
 import './css/app.css';
 
 ReactDOM.render((
@@ -19,10 +20,10 @@ ReactDOM.render((
               <Redirect to="/home"/>
           )}/>
           <Route path="/home" component={Basics}></Route>
-          <Route path="/apis" component={Apis}></Route>
-          <Route path="/consumers" component={Consumers}></Route>
-          <Route path="/plugins" component={Plugins}></Route>
-          <Route path="/upstreams" component={Upstreams}></Route>
+          <Route path="/apis" component={Viewer}></Route>
+          <Route path="/consumers" component={Viewer}></Route>
+          <Route path="/plugins" component={Viewer}></Route>
+          <Route path="/upstreams" component={Viewer}></Route>
          </div>
       </Router>
 ), document.getElementById('root'))

@@ -43,7 +43,7 @@ header>div{
   margin-bottom: 15px;
 }
 
-.basic-info {
+.page-content {
   display: flex;
   flex-direction: column;
   align-items: center;
