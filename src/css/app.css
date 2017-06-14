@@ -83,7 +83,6 @@ header>div{
   width: 100%;
 }
 .modal-container .modal, .modal-container .modal-backdrop {
-  position: absolute;
   color: black;
 }
 
