@@ -7,16 +7,11 @@ import {fetchFunction} from '../ajax/ajax.js'
 export default class Viewer extends Component {
   constructor(props) {
       super(props);
-      this.state = {objects: ""};
+      this.state = {objects: "", updated: false};
   }
 
   componentWillMount(){
-    console.log(this.props)
-    fetchFunction(response => this.setState({objects: response.data}), this.props.location.pathname);
-  }
-
-  componentDidUpdate(){
-    console.log(this.state.objects)
+    fetchFunction(response => this.setState({objects: response.data, updated: true}), this.props.location.pathname);
   }
 
   render() {
@@ -45,7 +40,7 @@ export default class Viewer extends Component {
       title = title.slice(0, 1).toUpperCase() + title.slice(1);
      }
 
-     if(panels.length == 0){ 
+     if(panels.length == 0 && this.state.updated){
          panels = "No " + title + ". Please create some " + title + ".";
      }
 
