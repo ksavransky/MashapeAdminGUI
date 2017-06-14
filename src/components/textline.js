@@ -11,7 +11,7 @@ export class Textline extends Component {
 
   render() {
     return (
-      <div className="text-line">{this.props.text}</div>
+      <div id={this.props.idname} className="text-line">{this.props.text}</div>
     );
   }
 }

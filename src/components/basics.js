@@ -65,7 +65,7 @@ export default class Basics extends Component {
         <Textline text={node.tagline + " v" + node.version}/>
         <Textline text={"Lua version: " + node.lua_version}/>
         <Textline text={"Hostname: " + node.hostname}/>
-        <Textline text={"Additional Node Information:"}/>
+        <Textline idname="add-info" text={"Additional Node Information:"}/>
         {panels}
       </div>
     );
