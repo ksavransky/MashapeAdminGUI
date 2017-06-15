@@ -45,9 +45,8 @@ header>div{
 
 
 .add-button {
-  position: fixed;
-  top: 15%;
-  left: 2%;
+  margin-top: 41px;
+  margin-left: 41px;
   cursor: pointer;
   width: 47px;
   height: 47px;
@@ -78,7 +77,6 @@ header>div{
 
 .modal-container {
   position: absolute;
-  top: 15%;
   height: 100%;
   width: 100%;
 }

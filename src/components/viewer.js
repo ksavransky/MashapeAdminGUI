@@ -16,12 +16,8 @@ export default class Viewer extends Component {
     fetchEntry(response => this.setState({objects: response.data, updated: true}), this.props.location.pathname);
   }
 
-  componentDidUpdate(){
-    fetchEntry(response => this.setState({objects: response.data, updated: true}), this.props.location.pathname);
-  }
-
   update(){
-    this.setState({updated: false});
+    fetchEntry(response => this.setState({objects: response.data, updated: true}), this.props.location.pathname);
   }
 
   render() {
